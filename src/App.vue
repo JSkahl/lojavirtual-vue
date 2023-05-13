@@ -120,9 +120,8 @@ function addCarrinho(quantidade, produto) {
                 cancelButtonText: "Cancelar"
             }).then((result) => {
                 if (result.isConfirmed) {
-                    produtosCarrinho.value[produtoCarrinhoPosition.value].quantidade += quantidade
-                } else if (result.isDenied) {
-                    console.log('erro')
+                    produtosCarrinho.value[produtoCarrinhoPosition.value].quantidade += quantidade;
+                    calcularTotal()
                 }
             })
             return;
